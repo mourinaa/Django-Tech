@@ -9,48 +9,28 @@ What's included
   * Roles: manager (CRUD), user (CRU), public (R)
   * Delete confirmation popup in UI
   * Upgrade operation adds/removes an extra dynamic field (handled without DB schema changes)
-- ERD and Flowchart images in /diagrams/
 - Dockerfile, requirements.txt, setup_venv.sh and a script to create demo users and groups.
 
 How to run locally (recommended)
-1. Create a virtualenv and install requirements:
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-
-2. Apply migrations and create demo data:
-   python manage.py migrate
-   python manage.py loaddata demo_fixture.json
-   # or run: python manage.py shell < create_demo_data.py  (script included)
-
-3. Run the development server:
-   python manage.py runserver
-
-4. Open the app:
-   - Engine page (modules list): http://127.0.0.1:8000/module/
-   - If you install the product module from that page, the product landing pages appear at:
-     http://127.0.0.1:8000/products/
+  - clone this repo with git clone https://github.com/mourinaan/Django-Tech.git
+  - create virtual environment. If using Windows, run python -m venv venv and activate with .\venv\Scripts\activate. If using Linux or Mac, run python3 -m venv venv and          activate with source venv/bin/activate.
+  - install dependency using pip install -r requirements.txt
+  - migrate database with python manage.py migrate.
+  - create demo data (user, group, module, product) using python manage.py shell < create_demo_data.py.
+  - run server with python manage.py runserver 8080.
+  - open in browser http://127.0.0.1:8080/
 
 Demo credentials (created by demo fixture / script)
   - Superuser admin: admin123 / Admin123!
-  - Manager user: manager123 / Manager123!
-  - Regular user: user123 / User123!
+  - Manager user: manager123 / Manager123! (CRUD)
+  - Regular user: user123 / User123! (CRU)
 
-Deploying to a public host (if you need a deployed link)
-- This environment cannot create a public deployment URL. I included a Dockerfile and instructions
-  so you (or I) can deploy to Render, Heroku (container or buildpack), or any VPS. If you want,
-  I can provide step-by-step commands for a specific host (Render/Heroku/AWS) — say which one.
+This project is also deploy on PythonAnywhere.
+You can try it live here: https://yourusername.pythonanywhere.com](https://mourinaan.pythonanywhere.com/
 
-Notes / Limitations
-- The "Upgrade" feature is implemented by storing dynamic field metadata in the engine and using
-  a JSONField on Product to store values for those dynamic fields. This avoids requiring database
-  schema migrations in runtime and satisfies the requirement that adding/removing fields be done
-  via the Upgrade button.
-- The module install/uninstall is implemented logically (toggle in DB). The module code is present
-  in the project; installation toggles accessibility and creates demo product data.
+Note
 
-Files of interest
-- project/settings.py  (Django settings)
-- modengine/  (engine app)
-- product_module/ (example module app)
-- diagrams/erd.png, diagrams/flowchart.png
+  - default timezone: Asia/Jakarta
+  - using Tailwind for UI (simple, clean)
+  - module engine support install / upgrade / uninstall
+  - public user can see product page but need login for manage
