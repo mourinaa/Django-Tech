@@ -26,7 +26,7 @@ Demo credentials (created by demo fixture / script)
   - Regular user: user123 / User123! (CRU)
 
 This project is also deploy on PythonAnywhere.
-You can try it live here: https://yourusername.pythonanywhere.com](https://mourinaan.pythonanywhere.com/
+You can try it live here: https://mourinaan.pythonanywhere.com/
 
 Note
 
