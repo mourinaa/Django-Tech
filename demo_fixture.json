@@ -1,0 +1,48 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {"name": "manager"}
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {"name": "user"}
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin123",
+      "password": "pbkdf2_sha256$260000$example1$examplehash1", 
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true,
+      "email": "admin@example.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "manager123",
+      "password": "pbkdf2_sha256$260000$example2$examplehash2",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "email": "manager@example.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "username": "user123",
+      "password": "pbkdf2_sha256$260000$example3$examplehash3",
+      "is_superuser": false,
+      "is_staff": false,
+      "is_active": true,
+      "email": "user@example.com"
+    }
+  }
+]
